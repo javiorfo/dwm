@@ -1,5 +1,5 @@
 # dwm
-Personal suckless DWM
+*Personal [suckless DWM](https://dwm.suckless.org/)*
 
 ## Dependencies
 - Firefox, Alacritty, Thunar, Iosevka Nerd Font
