@@ -72,7 +72,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[]  = { "firefox", NULL };
-static const char *filemanager[]  = { "thunar", NULL };
+static const char *filemanager[]  = { "lf", NULL };
+static const char *fileviewer[]  = { "zathura", NULL };
 static const char *poweroff[]  = { "sudo", "systemctl", "poweroff",  NULL };
 static const char *reboot[]  = { "sudo", "systemctl", "reboot",  NULL };
 
@@ -80,12 +81,16 @@ static const char *up_vol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", 
 static const char *down_vol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%",   NULL };
 static const char *mute_vol[] = { "pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
 
+static const char *brighter[] = { "brightnessctl", "set", "10%+", NULL };
+static const char *dimmer[]   = { "brightnessctl", "set", "10%-", NULL };
+
 static const Key keys[] = {
 	/* modifier                     key                      function        argument */
 	{ MODKEY,                       XK_p,                    spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,               spawn,          {.v = termcmd } },
    	{ MODKEY,                       XK_b,                    spawn,          {.v = browser} },
 	{ MODKEY,                       XK_t,                    spawn,          {.v = filemanager} },
+	{ MODKEY,                       XK_z,                    spawn,          {.v = fileviewer} },
    	{ MODKEY|ShiftMask,             XK_s,                    spawn,          {.v = poweroff} },
    	{ MODKEY|ShiftMask,             XK_r,                    spawn,          {.v = reboot} },
 	{ MODKEY,                       XK_j,                    focusstack,     {.i = +1 } },
@@ -110,6 +115,8 @@ static const Key keys[] = {
     { 0,                            XF86XK_AudioMute,        spawn,          {.v = mute_vol } },
     { 0,                            XF86XK_AudioLowerVolume, spawn,          {.v = down_vol } },
     { 0,                            XF86XK_AudioRaiseVolume, spawn,          {.v = up_vol } },
+    { 0,                            XF86XK_MonBrightnessDown,spawn,          {.v = dimmer } },
+    { 0,                            XF86XK_MonBrightnessUp,  spawn,          {.v = brighter } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
