@@ -1,8 +1,8 @@
-# dwm
+# dwm 6.5
 *Personal [suckless DWM](https://dwm.suckless.org/) configuration*
 
 ## Dependencies
-- Firefox, Alacritty, Thunar, Iosevka Nerd Font
+- Firefox, Alacritty, Zathura, lf, Iosevka Nerd Font
 
 ## Patches
 - [Always Center](https://dwm.suckless.org/patches/alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff)
@@ -24,3 +24,4 @@ sudo make clean install
 
 ### Donate
 - **Bitcoin** [(QR)](https://raw.githubusercontent.com/javiorfo/img/master/crypto/bitcoin.png)  `1GqdJ63RDPE4eJKujHi166FAyigvHu5R7v`
+- [Paypal](https://www.paypal.com/donate/?hosted_button_id=FA7SGLSCT2H8G)
