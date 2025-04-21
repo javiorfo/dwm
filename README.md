@@ -2,7 +2,7 @@
 *Personal [suckless DWM](https://dwm.suckless.org/) configuration*
 
 ## Dependencies
-- Firefox, st, Zathura, lf, Iosevka Nerd Font
+- Librewolf, alacritty, Zathura, thunar, Iosevka Nerd Font
 
 ## Patches
 - [Always Center](https://dwm.suckless.org/patches/alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff)
