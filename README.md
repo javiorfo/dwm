@@ -1,12 +1,12 @@
-# dwm 6.5
+# dwm 6.7
 *Personal [suckless DWM](https://dwm.suckless.org/) configuration*
 
 ## Dependencies
-- Librewolf, alacritty, Zathura, yazi, Iosevka Nerd Font
+- Librewolf, st, zathura, lf, dmenu, scrot, Iosevka Nerd Font
 
 ## Patches
 - [Always Center](https://dwm.suckless.org/patches/alwayscenter/dwm-alwayscenter-20200625-f04cac6.diff)
-- [Attach Aside And Below](https://dwm.suckless.org/patches/attachasideandbelow/dwm-attachasideandbelow-6.4.diff)
+- [Attach Aside And Below](https://dwm.suckless.org/patches/attachasideandbelow/dwm-attachasideandbelow-20200702-f04cac6.diff)
 - [Tag Colorscheme](https://dwm.suckless.org/patches/tagcolorscheme/dwm-tagcolorscheme-6.4.diff)
 - [Title Color](https://dwm.suckless.org/patches/titlecolor/dwm-titlecolor-20210815-ed3ab6b4.diff)
 - [Useless Gap](https://dwm.suckless.org/patches/uselessgap/dwm-uselessgap-20211119-58414bee958f2.diff)

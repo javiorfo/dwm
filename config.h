@@ -18,7 +18,7 @@ static const char col_cyan2[]       = "#767676";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan2  },
 	[SchemeTitle]  = { col_gray1, col_gray1,  col_gray3  },
 };
@@ -48,6 +48,7 @@ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] 
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const int refreshrate = 120;  /* refresh rate (per second) for client move/resize */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -69,13 +70,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", "5", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *browser[]  = { "librewolf", NULL };
-static const char *filemanager[]  = { "alacritty", "-e", "yazi", NULL };
+static const char *filemanager[]  = { "st", "-e", "bash", "-ic", "lf", NULL };
 static const char *fileviewer[]  = { "zathura", NULL };
 static const char *poweroff[]  = { "sudo", "systemctl", "poweroff",  NULL };
 static const char *reboot[]  = { "sudo", "systemctl", "reboot",  NULL };
+static const char *scrot[]  = { "scrot", "-s",  NULL };
 
 static const char *up_vol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%",   NULL };
 static const char *down_vol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%",   NULL };
@@ -93,6 +95,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_z,                    spawn,          {.v = fileviewer} },
    	{ MODKEY|ShiftMask,             XK_s,                    spawn,          {.v = poweroff} },
    	{ MODKEY|ShiftMask,             XK_r,                    spawn,          {.v = reboot} },
+   	{ MODKEY|ShiftMask,             XK_p,                    spawn,          {.v = scrot} },
 	{ MODKEY,                       XK_j,                    focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                    focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,                    incnmaster,     {.i = +1 } },
